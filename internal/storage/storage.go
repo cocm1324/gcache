@@ -108,7 +108,7 @@ func (s *Storage) Delete(key string) bool {
 	return true
 }
 
-func (s *Storage) Clear() int64 {
+func (s *Storage) Clear() {
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
 
@@ -116,8 +116,6 @@ func (s *Storage) Clear() int64 {
 		s.evict(s.tail)
 	}
 	s.size = 0
-
-	return 0
 }
 
 func (s *Storage) Size() int64 {

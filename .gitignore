@@ -1,0 +1,5 @@
+# build artifacts
+**/*.pb.go
+
+# cached
+go.sum

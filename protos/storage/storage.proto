@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package storage;
+
+option go_package = "github.com/cocm1324/gcache/protos/storage";
+
+message GetRequest {
+    string key = 1;
+}
+
+message GetResponse {
+    bool hit = 1;
+    optional bytes value = 2;
+}
+
+message PutRequest {
+    string key = 1;
+    bytes value = 2;
+}
+
+message PutResponse {
+    bool hit = 1;
+}
+
+message DeleteRequest {
+    string key = 1;
+}
+
+message DeleteResponse {
+    bool hit = 1;
+}
+
+message ClearRequest {
+
+}
+
+message ClearResponse {
+
+}
+
+service Storage {
+    rpc Get(GetRequest) returns (GetResponse);
+    rpc Put(PutRequest) returns (PutResponse);
+    rpc Delete(DeleteRequest) returns (DeleteResponse);
+    rpc Clear(ClearRequest) returns (ClearResponse);
+}
