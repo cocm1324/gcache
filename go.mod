@@ -2,7 +2,10 @@ module github.com/cocm1324/gcache
 
 go 1.18
 
-require google.golang.org/grpc v1.47.0
+require (
+	github.com/cocm1324/cstorage v0.1.2
+	google.golang.org/grpc v1.47.0
+)
 
 require (
 	github.com/golang/protobuf v1.5.2 // indirect

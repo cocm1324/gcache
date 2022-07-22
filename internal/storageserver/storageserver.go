@@ -4,16 +4,16 @@ import (
 	"context"
 	"log"
 
-	"github.com/cocm1324/gcache/internal/storage"
+	"github.com/cocm1324/cstorage"
 	storagepb "github.com/cocm1324/gcache/protos/storage"
 )
 
 type StorageServer struct {
 	storagepb.StorageServer
-	storage *storage.Storage
+	storage *cstorage.CStorage
 }
 
-func Init(s *storage.Storage) *StorageServer {
+func Init(s *cstorage.CStorage) *StorageServer {
 	return &StorageServer{
 		storage: s,
 	}
